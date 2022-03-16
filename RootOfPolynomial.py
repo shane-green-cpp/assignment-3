@@ -1,8 +1,23 @@
 import numpy as np
+import sys
 # DONE Bisection method
-# TODO Newton's method
-# TODO Secant method
-# TODO Hybrid method
+# DONE Newton's method
+# DONE Secant method
+# DONE Hybrid method
+#TODO file IO
+#TODO command line arguements
+
+fileName = sys.argv[len(sys.argv) - 1]
+sysEqnFile = open(fileName, "r")
+
+contents = sysEqnFile.read()
+sysEqnFile.close()
+
+lines = contents.split("\n")
+nums = lines[1].split()
+func = [int(i) for i in nums]
+
+print(func)
 
 iterations = 10000
 epsilon = pow(2, -23)
